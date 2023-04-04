@@ -28,4 +28,5 @@ GTAGS
 /code/vendor/
 ###< symfony/framework-bundle ###
 
+/code/public/uploads
 /documentation
