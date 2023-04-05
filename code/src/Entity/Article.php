@@ -111,4 +111,13 @@ class Article
 
         return $this;
     }
+
+    public function getMinutesToRead(): string
+    {
+        preg_match_all('/[a-z-A-Z]{3,}\b/s', $this->getText(), $matches, PREG_SET_ORDER, 0);
+        $words_count =  count($matches);
+        $avg_readers_words_per_min = round($words_count/200);
+
+        return ($avg_readers_words_per_min == 0) ? 'Less than 1 min' : ($avg_readers_words_per_min == 1 ? '1 min' : $avg_readers_words_per_min.' mins');
+    }
 }
